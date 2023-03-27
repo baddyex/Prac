@@ -96,3 +96,35 @@ public class A {
     
   
 }
+
+
+
+SIB only once
+99
+88888
+SIB dusra
+start main
+IIB pehla
+10
+88
+99
+IIB dusra
+cons
+10
+88
+IIB pehla
+10
+88
+99
+IIB dusra
+cons
+10
+88
+-------------------------------
+10
+48
+10
+48
+--------------------------------
+end main
+
