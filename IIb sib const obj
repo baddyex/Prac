@@ -1,0 +1,59 @@
+public class D {
+    
+    {
+        System.out.println("IIB");                //In iib if u create obj it wont get error but program hault n run abruptly
+    }
+    
+    static                                        //static k bad hi main run hoga
+    {
+        new D();                                  //can create obj inside SIB
+        System.out.println("SIB 1");
+    }
+    
+    static
+    {
+        System.out.println("SIB 2");
+        new D();
+    }
+    
+    D(){
+        System.out.println("D");
+
+       }
+    
+         public static void main(String args[]) {
+           new D().test2();
+           System.out.println("Main");
+           new D().test1();
+
+    }
+    
+          public void test1(){
+           System.out.println("Test 1");
+
+    }
+    
+          public void test2(){
+           System.out.println("Test 2");
+
+    }
+    
+    
+}
+
+
+
+IIB
+D
+SIB 1
+SIB 2
+IIB
+D
+IIB
+D
+Test 2
+Main
+IIB
+D
+Test 1
+
