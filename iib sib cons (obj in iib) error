@@ -1,0 +1,27 @@
+public class B{
+    
+    {
+        new B ();               //iib cant create obj abrupt error
+    }
+    public static void main(String args[]) {
+        B b1 = new B();
+      System.out.println("From main");
+    }
+}
+
+
+
+
+Exception in thread "main" java.lang.StackOverflowError
+	at B.<init>(B.java:4)
+	at B.<init>(B.java:4)
+	at B.<init>(B.java:4)
+	at B.<init>(B.java:4)
+	at B.<init>(B.java:4)
+	at B.<init>(B.java:4)
+	at B.<init>(B.java:4)
+
+
+
+
+
