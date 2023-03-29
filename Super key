@@ -48,15 +48,15 @@ public class C extends B{
                                          //const nvr get inherited but it looks lyk dat
                                          //it shud b 1st statement
                                          //only child class cons B() can call parent class cons
-	}										                   //this keywrd can call cons of same class but super use both class
-											                   //if const is blank it automatic runs super key with no args cons
+            }                            //this keywrd can call cons of same class but super use both class
+		                         //if const is blank it automatic runs super key with no args cons
 	
-                                    		 //if we dont write cons n super then also automatic it will call parent	
-											                   //if we dont write super inside cons and directly write SOP than also super will run first
+                                         //if we dont write cons n super then also automatic it will call parent	
+					 //if we dont write super inside cons and directly write SOP than also super will run first
 	C(int v){
 		//super will run coz every childcons has automatic super key with.wout args if we dont write it will run
 		this();
-		System.out.println(v);				       //this super cant b used both in one const.but fro variable n methods we can use
+		System.out.println(v);	     //this super cant b used both in one const.but for variable n methods we can use
 	}
 	
 	
