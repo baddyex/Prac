@@ -1,0 +1,108 @@
+package prac;
+
+public class B {
+
+	int i =10;		//if inhertence happen only then use super keyword
+	int j=20;	    //parent class member ko child class me call krna h
+					      //so use super keyword in child class
+	
+	
+	static int k=30;
+	
+	B(){
+		System.out.println("constructor");
+	}
+	
+	B(int l){
+		System.out.println(l);
+	}
+	
+	
+	public void xyz() {
+		
+		System.out.println("xyz");   //can also call methods using super
+	}
+	
+	
+	
+	
+	
+}
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+package prac;
+
+public class C extends B{
+	
+	C(){									                 
+		super(); //write or dont write doesnt matter in first if no args it will auto
+		System.out.println("ChildConst");	   
+		//super(500);shud b firstdo try replacing first with args 500 n write args must here	
+											                   
+                                         //const nvr get inherited but it looks lyk dat
+                                         //it shud b 1st statement
+                                         //only child class cons B() can call parent class cons
+	}										                   //this keywrd can call cons of same class but super use both class
+											                   //if const is blank it automatic runs super key with no args cons
+	
+                                    		 //if we dont write cons n super then also automatic it will call parent	
+											                   //if we dont write super inside cons and directly write SOP than also super will run first
+	C(int v){
+		//super will run coz every childcons has automatic super key with.wout args if we dont write it will run
+		this();
+		System.out.println(v);				       //this super cant b used both in one const.but fro variable n methods we can use
+	}
+	
+	
+  public static void main (String args[]) {
+		
+		C c1= new C();
+	    
+	    System.out.println(c1.k);
+		
+		c1.test();
+		System.out.println(c1.j);	//we cant use super inside static method
+		c1.test();
+		
+		new C(100);
+}
+	
+  
+  public void test() {
+		System.out.println(super.i);	//use super only in NS method
+		System.out.println(super.j);
+		
+		super.xyz();
+		
+		System.out.println(super.k);
+	}
+	
+	
+	
+}
+
+
+-------------------------------------------
+constructor
+ChildConst
+30
+10
+20
+xyz
+30
+20
+10
+20
+xyz
+30
+constructor
+ChildConst
+100
+
+
