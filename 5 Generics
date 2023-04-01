@@ -1,0 +1,44 @@
+public class A <x,y,z> {        //X is generics can b of any word caps small both
+                                //introduced in jdk 1.5
+    x i;                        //multiple generics use by , comma
+    x j;
+    x k;
+    
+    y l;
+    z m;
+    
+    public static void main(String args[]) {
+      
+      A a1= new A();
+      a1.i=10;          //int,float double long char etc 
+      a1.j=20.999;
+      a1.k='a';
+      a1.i=30;          // i ki latest value print krega
+      a1.i=10.4;
+      a1.i=10.7f;
+      
+      a1.l=60.9f;
+      a1.m=907869978789l;  //l for long put else error
+
+
+
+      System.out.println(a1.i);
+      System.out.println(a1.j);
+      System.out.println(a1.k);
+      
+      System.out.println(a1.l);
+      System.out.println(a1.m);
+
+    
+        
+    }
+}
+
+
+
+--------------------
+10.7
+20.999
+a
+60.9
+907869978789
