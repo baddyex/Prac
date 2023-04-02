@@ -1,0 +1,25 @@
+public class A <x> {
+    x i; 
+    //static x i;       //generics cant make static reference
+    x j;                //1st   //generic is only for NS variable
+    A a1;               //3rd
+    
+    public x test(){
+        A a1 = new A();
+        a1.i=220;
+        
+        return i ;      //2nd
+    }
+    
+    
+    public static void main(String args[]) {
+        A a2= new A();
+        a2.j = a2.test();       //generics cannot b applied on a local variable
+        
+        System.out.println();
+     
+     }
+}
+
+
+output blank
