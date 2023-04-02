@@ -23,3 +23,36 @@ public class A <x> {
 
 
 output blank
+
+
+---------------------------------------------------------------------------------------------
+
+//
+
+public class A <x> {
+   
+    
+    public static void main(String args[]) {
+
+        A a1 = new A();
+        System.out.println(a1);
+        System.out.println(a1.hashCode());      //hashcode gives me integer representation of object's memory address 
+        
+
+
+
+     }
+}
+
+
+//        System.out.println(a1); Syatem-class coz it has got many methods in it.
+                                 //out-static n final printstream ref variable
+                                 //println-NS
+                                 
+//System.err("Error");    --assisgnment
+//System.seterr("Error")
+
+//generics err see video last
+
+
+----------------------------------------------------------------------------------------------------
