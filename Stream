@@ -1,1 +1,86 @@
+String concept -28/10/20 RL1
+
+Q. reverse a given string / string is a class. it has lot of buildin method . but string reserve not availble. so apply logic,
+
+public class a {
+      psvm (){
+          string str = "hello  ";  //space included
+          s.o.println(str.chatAt(Index)); //index replace number 0123 it will show that word like charAt(2) so l is word
+          sop(str.lenght()); // space included
+
+          for(int i = str.lenght() ; i>0 ; i--){
+          sop(i);                                            r- 654321 nextlines me ayega sab
+
+          for(int i = str.lenght() ; i>=0 ; i--){
+          sop(i);                                            r- 6543210
+
+          for(int i = str.lenght()-1 ; i>=0 ; i--){
+          sop(i);                                            r- 543210
+
+          for(int i = str.lenght()-1 ; i>=0 ; i--){
+          sop(str.charAt(i));                                r- olleh sab next line me (remove ln if all want in same line) keep incresing string for examples
+
+           }
+}
+
+q. count no. of words in given string?
+     
+      psvm (){
+          string str = "hello my name";  //space included
+          str.split(" ") //crtl 1 assign stsmnt to local variable
+          String[] s = str.split(" ");
+          sop(s.lenght);                                    r- 3 (if end space it will show 3 only, but in front if space it will show 4)there is flaw this
+
+
+          string str = " hello my name";  //space included
+          String[] s = str.trim().split(" ");  //trim removes d white spaces in front n back
+          sop(s.lenght);                                    r- 3
+
+          now apply for each
+          for (String x:s) {
+          sop(x);                                           r- 3 hello my name (allin next line)
+
+string builder n buffer will do later
+
+
+
+Q. check if opening closing same brackets?
+
+      psvm (){
+          string str = "(((()))"  ;   //modify with scanner 
+                                                      scanner scan = new scanner(system.in);
+                                                      sop("enter open close bracks");
+                                                                string str =scan.next();              r- run type (())) enter error/no error
+
+          int count1=0;
+          int count2=0;
+          for(int i=0;i<str.length();i++) {
+          sop(str.charAt(i));                      r- (((())) all in nxt line
+
+               if( str.charAt(i)=='(' ){
+                   count1++  ;                            //int count add kiye yaha aake upar me
+                } else if ( str.charAt(i)==')'  ){ 
+                   count2++  ;                            // int count2 add kiye yaha aake upar me
+                 }
+          }
+      if(count1==count2){
+            sop("no error");
+      }else{
+            sop("error");      }
+}                                                   r- error coz they are nt = make changes try = not equal (())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
