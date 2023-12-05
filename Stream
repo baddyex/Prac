@@ -70,6 +70,65 @@ Q. check if opening closing same brackets?
 }                                                   r- error coz they are nt = make changes try = not equal (())
 
 
+Q. patterns star? square rectangle rhombus
+build 5x5
+
+public class{
+      psvm(){
+            for(int i=0;i<5 ; i++){
+            sop("*"); //remove ln from print here             r- *****
+
+                  //for loop k andr for loop dalo to repeat this line
+                  for(j=0;j<5;j++){                  //i yaha horizontal * ka h aur j yaha vertical * ka h
+                  sop("*");
+                  }
+                  sop("/n");                         r- *****
+                                                        ***** like wise 5 times in nxt line //sop upar niche brakets have a look
+            }
+           
+} 
+
+Q. right angle trianle? shape
+
+public class{
+      psvm(){
+            for(int i=0;i<5 ; i++){
+            sop("*"); //remove ln from print here             r- *****
+
+                  //for loop k andr for loop dalo to repeat this line . here || represent "Or" , && ampersand repers to
+                  for(j=0;j<5;j++){
+                        if(i==0&&j==1 || i==0&&j==2  || i==0&&j==3 || i==0&&j==4  ||
+                           i==1&&j==1 || i==1&&j==2  || i==1&&j==3 || 
+                           etc
+
+
+                        ){
+                        sop(" ");
+                        }else {
+                        sop("*");
+                        }
+                  }
+      
+         }
+                  sop("/n");                         r- * ***      *  **      *
+                                                        *****      *****      **   //brackets upar niche this line have a look
+           
+}           
+
+
+29/10/20 R1 string concept mutable-chanking in objcts, immutable-not changing constant/content of obj cant be changed
+
+mutable is something the class obj properties keeps on changing.
+imm class once its obj is created then state cant b altered
+
+1. create a final class
+
+Q. 
+
+
+
+
+
 
 
 
