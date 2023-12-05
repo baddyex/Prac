@@ -115,6 +115,7 @@ public class{
            
 }           
 
+----------------------------------------------------------------------------------------
 
 29/10/20 R1 string concept mutable-chanking in objcts, immutable-not changing constant/content of obj cant be changed
 
@@ -220,11 +221,257 @@ string s2="xyz"      //same obj present
 string s3="abc"      //new obj formed created in constant tool
 string s4="abc"      //same above obj
 
---------------------
+-----------------------------------------------------------------------------------------
+
+29/10/20 part2 RL1
 
 sone buildin method of strng classes
 
 Q. upper case lower case string??
+
+psvm() {
+            string str = " this is car"       //white space
+            sop( str.toLowerCase() ) ;       //builtin method
+            sop( str.toUpperCase() ) ;
+            sop( str.trim() );              //remove white spaces
+       }
+
+Q. starts with ends with?
+
+psvm() {
+            string str = "abababnbbbz"
+            sop(str.startsWith("a") );
+            sop(str.endsWith("a") );        
+            sop(str.startsWith("g") );             r-true true false
+
+      }
+
+Q. lenght?
+
+psvm() {
+            string str = "abababnbbbz"
+            sop(str.length() );            r-11
+      }
+
+Q. value of?---valueOf method converts given typ such as "int long float double boolean and char array" TO "string"             //strng to int we saw earlier interger.parseInt
+valueOf static method present in string class. thats d reason im accessing wth class name
+psvm() {
+            int i=10;
+            string str =string.valueOf(i) ;
+            sop(str);
+
+            double i=10;
+            string str =string.valueOf(i) ;
+            sop(i)
+
+            char i='a' ;
+            string str =stering.valueOf(i);
+            sop(i)
+
+            boolean i=true;
+            string str =stering.valueOf(i);
+            sop(i)
+           
+            char[] i=['a','b','c'] ;
+            string str =stering.valueOf(i);
+            sop(i)                              r- abc
+
+      }      
+
+Q. how many a occurs in a given string aabaababaab ?
+Q. 1                       Q.  1111            Q.     1                 Q.
+   23                          1111                  1111
+   456                         ....                 111111
+   78910
+   1112131415
+
+
+Q. Fing duplicate elements in a given array?and remove it.
+-----------------------------------------------------------------------------------------
+
+30/10/20 R1
+
+Threads in java (multitasking) /divide in module/improve d performance/ multitasking done at program level/running d program part by part/which modile will run how much time we cant predict/if muskates then its gets data corrupt/
+by reducing execution time
+ 
+1.Thread - class -methods--- run(); start()
+2.Runnable- interface-incomplete methods---
+
+Q.      public class A extends Thread { //2 methods - run() start()  //thread builtin class
+
+            @override
+            public void run() {
+                  for(int i=0;i<1000;i++) {          //which forloop will run first we cant predict
+                  sop("run");                        //module1
+                                                     //everytime obj created run method is loaded into it coz run method is non static
+                  }      
+      
+            psvm () {
+                  for(int i=0;i<1000;i++) {          //a1.run() if its ordinary method than correct but here thread we will run 2nd method start()
+                  sop("main")                        //module2
+                  }
+                  A a1=new A() ;                     //we can write this wherever inside main method
+                  a1.start() ;
+
+      }                                          r- run run run run run run main main main run main......
+
+
+Q.  xxx yyy zzz
+
+      public class A extends Thread { //2 methods - run() start()  //thread builtin class
+            string name;
+
+            A(String name) {
+                  this.name=name ;
+            }
+            @override
+            public void run() {
+                  for(int i=0;i<1000;i++) {          //which forloop will run first we cant predict
+                  sop("run");
+                  }
+            }
+    Next page 
+      class B
+            psvm() {                              //main is also itself a thread
+                  A a1=new A("xxx");
+                  A a1=new A("yyy");
+                  A a1=new A("zzz");
+                  a1.start();
+                  a2.start();
+                  a3.start();
+            }
+
+
+Q. runnable thread
+
+public class A implements Runnable {
+            @override
+            public void run() {
+                  for(int i=0;i<1000;i++) {          //which forloop will run first we cant predict
+                  sop("run");                  
+                  }
+            psvm() {
+                  A a1=newA();
+                  Thread t1= new Thread(a1);
+                  t1.start() ;
+
+                  for(int i=0;i<1000;i++) {          //which forloop will run first we cant predict
+                  sop("main");
+                  }
+            }
+
+
+Q. instead of "extends thread" replace "implements runnable"  //runnable has only 1 incomplete method. it doest have start method.
+
+public class A implements Runnable {            //as its interface
+            string name;
+            A(String name) {
+                  this.name=name;
+            }
+            @override
+            public void run() {
+                  for(int i=0;i<1000;i++) {          //which forloop will run first we cant predict
+                  sop(this.name);                  
+                  }
+            }
+            psvm() {                                 //multitasking will happen btween 3 module of threads
+                  A a1=newA("xxx")
+                  Thread t1 =new Thread(a1);        //this we use new thread to start runnable and then we used start()
+                  t1.start();
+
+                  A a2=newA("yyy")
+                  Thread t2 =new Thread(a2);
+                  t2.start();
+
+                  for(int i=0;i<1000;i++) {          //which forloop will run first we cant predict
+                  sop("main");                  
+                  }                                  r- xxx xxx xxx yyy yyy yyy zzz main main main
+            }
+----------------------------------------------------------------------------------------------------------
+30/10/20 part 2
+
+Drawbacks of thread (example- atm balance withdraw deposit) (flight booking) (coupon amazon same time from same account)
+when 2 threads r operating on a common data, data corruptiom will occur, by syncronising we will overcome this.
+
+juss a balance example dont try
+
+Q.add withdraw amount non syncronised manner, data will get corrupt.
+
+public class A{
+      int balance=0;
+
+      psvm() {
+            A a1=newA() ;
+            a1.account() ; //ctr1 create a method rigth click
+            sop(a1.balance);
+            }
+
+      public void account() {                                                //anonynms classes inside a class , class with no name
+            Thread t1=new Thread (   
+                                    new Runnable() { 
+                                          @override
+                                          public void run() { add(); }
+                                                   } 
+                          
+                                 ) ;                                         //anonymns class juss like a argument passed inside here flower braket, this anonym class will run as d thread obj is created
+
+            Thread t2=new Thread (   
+                                    new Runnable() { 
+                                          @override
+                                          public void run() { sub(); }
+                                                   } 
+                          
+                                 ) ; 
+            try {
+                  t1.join();
+                  t2.join();
+            } catch (exception e) {
+                  sop(e);
+            }
+
+            t1.start();                                                     //mover this here there inside methods for run
+            t2.start();
+
+      }
+            public synchronized void add() {
+                  for(i=0;i<10000;i++){
+                  balance=balance +i ;
+                  }
+            }
+            public synchronized void sub() {
+                  for(i=0;i<10000;i++){
+                  balance=balance -i ;
+                  }
+
+            }
+}                                                      r- 12636 13784 174874 diffent numbers always we run corrupted balance, use synchronised in add sub for stable.
+
+//now we have to join the threads.
+
+Thread join- continuation of threads after one another
+Thread synchronized - its like a lock, one thread will wait untill finishes other
+
+-----------------------------------------------------------------------------------------------------------------
+2/11/20
+
+nowadays springboot helps in thread sync. frameworks will handle all of this.
+
+wait notify notify all- they r present in which class? obj class.(not in thread class). obj class is supermost class in java. every class which is created is inherted whatever in obj class has to get inherited
+
+
+class A
+psvm
+
+
+
+
+
+
+
+
+
+
+
 
 
 
