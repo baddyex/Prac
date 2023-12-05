@@ -121,9 +121,111 @@ public class{
 mutable is something the class obj properties keeps on changing.
 imm class once its obj is created then state cant b altered
 
-1. create a final class
+steps to create imm class.
+1. create a final class (coz we dont want to inherit n modify the class)
+2. set d values of the prop using only constructors (coz obj will b created const will b called, inside const iniatialize variable will do it, once variale r initialize thats it, it will get loaded into obj n values will not b changed.
+3. Make the properties as final. (pre initialization is final)
+4. do not provide any setters for these properties. (only getters)
 
-Q. 
+Q. imm?
+
+final public class A{
+            private final int age;            //private also coz u cant access these prop outside of class at all
+            private final string name;        //final variable needs to b initialized
+
+            
+            public A(int age, string name) {  //constr (2 arguments)
+                  this.age=age;
+                  this.name=name;
+            }
+            //rightclick source generate constr
+            public int getAge() {
+                  return age;
+            }
+            public string getName() {
+                  return name;
+            }
+
+      psvm() {
+            A a1= new A(20,"hello");    //ref a1 is local i cant use that in constr, so only way to access that wud b this.
+                                        //when obj here will be created then constr will b called, age name will be initialized, and value cant b altered from here
+      }
+
+}
+-----------
+coz string is class i can create its obj. and when obj of string class created it is immutable. means i cant alter d value of dat obj
+
+string s1 = new string("xyz")  //obj created n imm
+string s2 = new string("xyz")
+
+   when s1=s2 it will return false (comparing obj addresses, not comapring values in obj)
+
+in java if want to comapre string values, we use equals,
+
+   s1.euqals(s2)  it will b true  //values here comapring
+
+Q. string comaparision?
+
+psvm(){
+           string s1 = new string("xyz");
+           string s1 = new string("xyz");
+           sop(s1==s2);                        r- false
+           sop(s1.equals(s2));
+
+}
+----------------
+
+srting s1="hello"  //it will create an obj here without using new keyword in that its storing hello
+string s2="hello"  //string class is designed in very smart way. it will see if hello name obj already created it wont create s2 obj again it will simply refer to same obj
+
+string s3="xyz"    //no obj earlier created so it will create new string obj with ref s3
+string s4="xyz"    //same obj earlier created so 2-2 references
+so now.
+
+s1==s2 true      //obj adress compared here
+s3==s4 true
+
+s1.equals(s2) true //obj value compared here
+s3.equals(s4) true
+
+-----------------
+
+string s1 = new string("xyz") ;
+string s2="xyz" ;                  //in this case it wont refer to the upper obj, coz syntax followed here is different
+string s3="xyz" ;                  //this will refer to same object s2 only coz same syntax
+string s4 = new string("xyz")      //every time new keyword used new obj will get created, so its not same as s1 obj
+
+s1==s4 false
+s2==s1 false
+s2==s3 true                        //these all are for obj address not value
+
+but if u use s1.euquals(), everything will be true
+
+s1.equals(s4) true
+
+-------------------
+
+now we will see y string is imm
+
+string s1 = "xyz"            //if d obj mutuale it will change value but here this wont happen
+s1="abc"                     //here it will create one more obj and put abc here and ref from prev obj s1 will go to garbage collecion. it will create one more obj but wont change and prev will b garbage and remove to new. value not changing ref is removed and new ref created
+s1="xxxx"                    //prev ref obj removed and points to new ref obj s1. so string is imm
+
+constant tool...later
+strng goes to d constant tool searches out there is there already an obj there and if already value present, then it will point to same obj.
+area where imm obj hav been created that area is called as string constant tool 
+string s1="xyz"
+string s2="xyz"      //same obj present
+
+string s3="abc"      //new obj formed created in constant tool
+string s4="abc"      //same above obj
+
+--------------------
+
+sone buildin method of strng classes
+
+Q. upper case lower case string??
+
 
 
 
